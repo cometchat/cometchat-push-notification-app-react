@@ -26,14 +26,14 @@ CometChat Web Reactjs Push Notifications sample app (built using **CometChat Pro
 
 
   
-<!-- ## Screenshots
+## Screenshots
 
-<img align="center" src="https://github.com/cometchat-pro/javascript-reactjs-chat-app/blob/master/screenshots/login.png" style="width:75%;"/>
-<p align ="center"> Fig : Login page embedded in Website </p>
+<img align="center" src="https://github.com/cometchat-pro/web-reactjs-push-notifications-app/blob/master/screenshots/screenshot1.png" style="width:75%;"/>
+<p align ="center"> Fig : Sending Push notification interface </p>
 <br></br>
-<img align="center" src="https://github.com/cometchat-pro/javascript-reactjs-chat-app/blob/master/screenshots/chat.png" style="width:75%;"/>
-	<p align ="center"> Fig : Chat Application embedded in Website </p>
-<br></br> -->
+<img align="center" src="https://github.com/cometchat-pro/web-reactjs-push-notifications-app/blob/master/screenshots/screenshot2.png" style="width:75%;"/>
+	<p align ="center"> Fig : Notification receieved  </p>
+<br></br>
 
 
 ## Config Development Environment
