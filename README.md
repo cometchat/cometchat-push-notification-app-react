@@ -28,10 +28,10 @@ CometChat Web Reactjs Push Notifications sample app (built using **CometChat Pro
   
 ## Screenshots
 
-<img align="center" src="https://github.com/cometchat-pro/web-reactjs-push-notifications-app/blob/master/screenshots/screenshot1.png" style="width:75%;"/>
+<img align="center" src="https://github.com/cometchat-pro-samples/web-reactjs-push-notifications-app/blob/master/screenshots/screenshot1.png" style="width:75%;"/>
 <p align ="center"> Fig : Sending Push notification interface </p>
 <br></br>
-<img align="center" src="https://github.com/cometchat-pro/web-reactjs-push-notifications-app/blob/master/screenshots/screenshot2.png" style="width:75%;"/>
+<img align="center" src="https://github.com/cometchat-pro-samples/web-reactjs-push-notifications-app/blob/master/screenshots/screenshot2.png" style="width:75%;"/>
 	<p align ="center"> Fig : Notification receieved  </p>
 <br></br>
 
