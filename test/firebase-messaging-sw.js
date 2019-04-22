@@ -19,7 +19,7 @@ const messaging = firebase.messaging();
       // Customize notification here
       
       var notificationOptions = {
-        body: 'Background Message body.',
+        body: payload.data.alert,
         icon: ''
       };
     

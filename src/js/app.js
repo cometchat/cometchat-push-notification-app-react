@@ -8,10 +8,7 @@ import Login from "./components/login/Login";
 import * as action from "./store/actions/cc_action";
 
 class App extends Component {  
-   
-componentDidMount(){
-   //this.props.login("superhero1");
-}
+    
     render() {    
         return (
             <CheckLoginUser loggedStatus = {this.props.loggedInUser} cc_layout = {this.props.cc_layout}/> 

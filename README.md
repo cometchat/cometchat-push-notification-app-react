@@ -9,19 +9,14 @@
 	</div>	
 </div>
 
-CometChat Web Reactjs Push Notifications sample app (built using **CometChat Pro**) is a fully functional messaging app capable of **one-on-one** (private) and **group** messaging. The app enables users to send **text** and **multimedia messages like audio, video, images, documents.**
-
-
-
-  
-
+CometChat Web Reactjs Push Notifications sample app (built using **CometChat Pro**) is a sample app capable of recieve and send push notification for **user** and **group** messaging. 
 
 ## Table of Contents
 
 
 1. [Screenshots](#Screenshots)
 
-1. [Config Development Environment](#Config-your-Development-Environment)
+2. [Config Development Environment](#Config-your-Development-Environment)
 
 2. [Config Chat App](#Config-Chat-App)
 
@@ -66,7 +61,6 @@ Now you are ready to sync application dependencies.  Please follow the following
 
 1. Install packages 
 
-
   
 
 ```bash
@@ -106,7 +100,7 @@ npm run dev
 
 ```
 
-Navigate to **localhost:8080** to check sample app.  You can update host in **package.json** file.   
+Navigate to **localhost:5050** to check sample app.  You can update host in **package.json** file.   
   
 
 2. Build the sample
