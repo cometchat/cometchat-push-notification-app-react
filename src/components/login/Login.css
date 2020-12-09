@@ -1,27 +1,9 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
-
-.container{
-  width: 100vw;
-  height: 100vh;
-}
-
-#root {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-}
-
-.heading {
+.center {
   text-align: center;
   padding: 10px 0;
 }
 
-.loginControls {
+.loginWrapper {
   width: 100%;
   padding: 10px 20px;
 }
@@ -32,7 +14,7 @@
   padding-top: 10px;
 }
 
-.heros {
+.superhero {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
@@ -45,12 +27,12 @@
   justify-content: center;
 }
 
-.heroImage {
+.superheroAvatar {
   width: 40%;
   padding-top: 5px;
 }
 
-.heroId {
+.superheroId {
   width: 60%;
   height: 45px;
   line-height: 45px;
@@ -65,7 +47,7 @@ img {
   margin-right: auto;
 }
 
-.loginWithId {
+.formElement {
   display: flex;
   flex-direction: column;
   align-items: center;

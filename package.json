@@ -1,6 +1,6 @@
 {
   "name": "javascript-react-chat-push-notification-app",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "ReactJS sample app to understand the implementation of CometChat's Enhanced Push Notifications",
   "private": true,
   "dependencies": {

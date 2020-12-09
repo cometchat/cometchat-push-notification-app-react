@@ -18,6 +18,7 @@ class Home extends Component {
     receiverId: '',
     receiverType: 'user',
     textMessage: '',
+    errorMessage: '',
   }
 
   async componentDidMount() {
@@ -94,6 +95,18 @@ class Home extends Component {
     });
   }
 
+  showSnackbar = () => {
+    var snackbar = document.getElementById("snackbar");
+    snackbar.className = "show";
+    setTimeout(() => { 
+      snackbar.className = snackbar.className.replace("show", "");
+      this.setState({
+        ...this.state,
+        errorMessage: '',
+      });
+    }, 3000);
+  }
+
   sendMessage = () => {
     if (this.state.receiverId) {
       if (this.state.textMessage && this.state.textMessage.trim()) {
@@ -102,6 +115,7 @@ class Home extends Component {
         CometChat.sendMessage(cometChatTextMessage).then(
           _ => {
             this.setState({
+              ...this.state,
               receiverId: '',
               receiverType: 'user',
               textMessage: '',
@@ -109,10 +123,13 @@ class Home extends Component {
             this.receiverIdRef.current.focus();
           }, error => {
             this.setState({
+              ...this.state,
               receiverId: '',
               receiverType: 'user',
               textMessage: '',
+              errorMessage: error.message,
             });
+            this.showSnackbar();
             this.receiverIdRef.current.focus();
             console.log('Error while sending message', error);
           }
@@ -135,27 +152,28 @@ class Home extends Component {
       <div>
         { authRedirect }
         <Heading text={"Logged in as: " + this.props.user.name} />
-        <div className="loginControls">
-          <div className="loginWithId">
+        <div className="homeWrapper">
+          <div className="formElement">
             <input autoFocus ref={this.receiverIdRef} id="receiverId" type="text" placeholder="Enter receiver ID here" value={this.state.receiverId} onChange={this.onReceiverIdChanged}></input>
           </div>
-          <div className="loginWithId">
-            <div className='userType'>
+          <div className="formElement">
+            <div>
               <input type="radio" onChange={this.onReceiverTypeChanged} checked={this.state.receiverType === 'user'} value="user" name="receiverType" id="receiverType" /> User&nbsp;
               <input type="radio" onChange={this.onReceiverTypeChanged} checked={this.state.receiverType === 'group'} value="group" name="receiverType" id="receiverType" /> Group
             </div>
           </div>
-          <div className="loginWithId">
+          <div className="formElement">
             <input ref={this.textMessageRef} type="text" placeholder="Enter text message here" value={this.state.textMessage} onChange={this.onTextMessageChanged}></input>
           </div>
-          <div className="loginWithId">
+          <div className="formElement">
             <button className="pointer" onClick={this.sendMessage}>Send</button>
           </div>
           <br />
-          <div className="loginWithId">
+          <div className="formElement">
             <button className="pointer" onClick={this.logout}>Logout</button>
           </div>
         </div>
+        <div id="snackbar">{this.state.errorMessage}</div>
       </div>
     );
   }

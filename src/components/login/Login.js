@@ -15,11 +15,18 @@ class Login extends Component {
   }
   login = (uid) => {
 
-    if (!uid) {
-      uid = this.myRef.current.value;
+    let loginId = uid;
+
+    if (!loginId) {
+      loginId = this.myRef.current.value;
     }
 
-    this.uid = uid;
+    if(!loginId) {
+      this.myRef.current.focus();
+      return;
+    }
+
+    this.uid = loginId;
     this.props.onLogin(this.uid, COMETCHAT_CONSTANTS.AUTH_KEY);
   }
   render() {
@@ -43,55 +50,55 @@ class Login extends Component {
         {loader}
         <Heading text='React Push Notifications Sample App' />
         {errorMessage}
-        <div className="loginControls">
-          <div className='heading'>Login with one of our Sample Users</div>
+        <div className="loginWrapper">
+          <div className='center'>Login with one of our Sample Users</div>
           <div className="loginUsers">
-            <div className="heros pointer" onClick={() => this.login('superhero1')}>
-              <div className="heroImage">
+            <div className="superhero pointer" onClick={() => this.login('superhero1')}>
+              <div className="superheroAvatar">
                 <img src="https://data-us.cometchat.io/assets/images/avatars/ironman.png" alt="ironman"></img>
               </div>
-              <div className='heroId'>
+              <div className='superheroId'>
                 superhero1
               </div>
             </div>
-            <div className="heros pointer" onClick={() => this.login('superhero2')}>
-              <div className="heroImage">
+            <div className="superhero pointer" onClick={() => this.login('superhero2')}>
+              <div className="superheroAvatar">
                 <img src="https://data-us.cometchat.io/assets/images/avatars/captainamerica.png" alt="captainamerica"></img>
               </div>
-              <div className='heroId'>
+              <div className='superheroId'>
                 superhero2
               </div>
             </div>
-            <div className="heros pointer" onClick={() => this.login('superhero3')}>
-              <div className="heroImage">
+            <div className="superhero pointer" onClick={() => this.login('superhero3')}>
+              <div className="superheroAvatar">
                 <img src="https://data-us.cometchat.io/assets/images/avatars/spiderman.png" alt="spiderman"></img>
               </div>
-              <div className='heroId'>
+              <div className='superheroId'>
                 superhero3
               </div>
             </div>
-            <div className="heros pointer" onClick={() => this.login('superhero4')}>
-              <div className="heroImage">
+            <div className="superhero pointer" onClick={() => this.login('superhero4')}>
+              <div className="superheroAvatar">
                 <img src="https://data-us.cometchat.io/assets/images/avatars/wolverine.png" alt="wolverine"></img>
               </div>
-              <div className='heroId'>
+              <div className='superheroId'>
                 superhero4
               </div>
             </div>
-            <div className="heros pointer" onClick={() => this.login('superhero5')}>
-              <div className="heroImage">
+            <div className="superhero pointer" onClick={() => this.login('superhero5')}>
+              <div className="superheroAvatar">
                 <img src="https://data-us.cometchat.io/assets/images/avatars/cyclops.png" alt="cyclops"></img>
               </div>
-              <div className='heroId'>
+              <div className='superheroId'>
                 superhero5
               </div>
             </div>
           </div>
-          <div className="loginWithId">
-            <div className='heading'>OR</div>
+          <div className="formElement">
+            <div className='center'>OR</div>
             <input ref={this.myRef} type="text" placeholder="Enter your UID here"></input>
           </div>
-          <div className="loginWithId">
+          <div className="formElement">
             <button onClick={() => this.login()} className="pointer">Login</button>
           </div>
         </div>
