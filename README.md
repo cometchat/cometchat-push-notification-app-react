@@ -2,7 +2,7 @@
 
 This Sample app will guide you to setup Push Notifications in your ReactJS web application.
 
-![Login Page](images/login.png "Login")
+![Login Page](images/login-updated.png "Login")
 
 ## Pre-requisite
 1. Login to the <a href="https://app.cometchat.io/" target="_blank">CometChat Dashboard</a>.
@@ -26,7 +26,7 @@ This Sample app will guide you to setup Push Notifications in your ReactJS web a
 9. Send a message to the user logged in to it from the other browser.
 10. You should be able to see the notification since the other tab is not in focus.
 
-![Home Page](images/home.png "Home")
+![Home Page](images/home-updated.png "Home")
 
 ---
 
