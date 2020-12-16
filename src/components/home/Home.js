@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Heading from '../heading/Heading';
 import './Home.css';
 
 import * as actions from '../../store/action';
@@ -19,6 +18,7 @@ class Home extends Component {
     receiverType: 'user',
     textMessage: '',
     errorMessage: '',
+    placeholder: 'Enter UID here',
   }
 
   async componentDidMount() {
@@ -85,6 +85,7 @@ class Home extends Component {
     this.setState({
       ...this.state,
       receiverType: e.target.value,
+      placeholder: e.target.value == 'user' ? 'Enter UID here' : 'Enter GUID here',
     });
   }
 
@@ -151,22 +152,22 @@ class Home extends Component {
     return (
       <div>
         { authRedirect }
-        <Heading text={"Logged in as: " + this.props.user.name} />
+        <div style = {{textAlign: 'center', paddingTop: '25px', paddingBottom: '10px', color: '#3b96ff', fontSize: 'x-large'}}>Logged in as: {this.props.user.name}</div>
         <div className="homeWrapper">
           <div className="formElement">
-            <input autoFocus ref={this.receiverIdRef} id="receiverId" type="text" placeholder="Enter receiver ID here" value={this.state.receiverId} onChange={this.onReceiverIdChanged}></input>
+            <input autoFocus ref={this.receiverIdRef} id="receiverId" type="text" placeholder={this.state.placeholder} value={this.state.receiverId} onChange={this.onReceiverIdChanged}></input>
           </div>
           <div className="formElement">
-            <div>
-              <input type="radio" onChange={this.onReceiverTypeChanged} checked={this.state.receiverType === 'user'} value="user" name="receiverType" id="receiverType" /> User&nbsp;
-              <input type="radio" onChange={this.onReceiverTypeChanged} checked={this.state.receiverType === 'group'} value="group" name="receiverType" id="receiverType" /> Group
+            <div className="radioContainer">
+              <input type="radio" onChange={this.onReceiverTypeChanged} checked={this.state.receiverType === 'user'} value="user" name="receiverType" id="receiverTypeUser"/><label htmlFor="receiverTypeUser">User</label>
+              <input type="radio" onChange={this.onReceiverTypeChanged} checked={this.state.receiverType === 'group'} value="group" name="receiverType" id="receiverTypeGroup"/><label htmlFor="receiverTypeGroup">Group</label>
             </div>
           </div>
           <div className="formElement">
-            <input ref={this.textMessageRef} type="text" placeholder="Enter text message here" value={this.state.textMessage} onChange={this.onTextMessageChanged}></input>
+            <input ref={this.textMessageRef} type="text" placeholder="Message" value={this.state.textMessage} onChange={this.onTextMessageChanged}></input>
           </div>
           <div className="formElement">
-            <button className="pointer" onClick={this.sendMessage}>Send</button>
+            <button className="pointer" onClick={this.sendMessage} style={{ background: '#3b96ff', color: 'white' }}>Send</button>
           </div>
           <br />
           <div className="formElement">

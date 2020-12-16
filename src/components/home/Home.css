@@ -52,6 +52,33 @@ button {
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
+.radioContainer {
+  display: flex;
+  border-radius: 6px;
+  background: #bbb;
+  height: 30px;
+  width: 250px;
+}
+
+input[type=radio] {
+  visibility: hidden;
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  margin-left: -13px;
+  justify-content: center;
+  cursor: pointer;
+  width: 130px;
+  border-radius: 6px;
+  border: 2px solid #bbb;
+}
+
+input:checked + label {
+  background: white;
+}
+
 @-webkit-keyframes fadein {
   from {bottom: 0; opacity: 0;} 
   to {bottom: 30px; opacity: 1;}
