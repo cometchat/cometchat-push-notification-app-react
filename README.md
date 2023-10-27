@@ -1,35 +1,46 @@
-# Token-based Push Notifications Sample App
+# Getting Started with Create React App
 
-This Sample app will guide you to setup Push Notifications in your ReactJS web application.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-![Login Page](images/login-updated.png "Login")
+## Available Scripts
 
-## Pre-requisite
-1. Login to the <a href="https://app.cometchat.io/" target="_blank">CometChat Dashboard</a>.
-2. Select an existing app or create a new one.
-3. Go to "API & Auth Keys" section and copy the `REST API` key from the "REST API Keys" tab.
-4. Go to the "Extensions" section and Enable the Push Notifications extension.
-5. Go to the "Installed" tab in the same section and open the settings for this extension and Set the version to `V2`.
-6. Also, save the `REST API` key in the Settings and click on Save.
-7. Copy the `APP_ID`, `REGION` and `AUTH_KEY` for your app.
+In the project directory, you can run:
 
-## Usage
+### `npm start`
 
-1. Clone this repository.
-2. Navigate to the root directory and replace `APP_ID`, `REGION` and `AUTH_KEY` with yours in `src/consts.js` file.
-3. Install dependencies using `npm install`.
-4. Get the `FIREBASE_CONFIG` object for your Firebase App from the <a href="https://console.firebase.com/" target="_blank">Firebase Console</a>.
-5. Paste the object in `src/firebase.js` and `public/firebase-messaging-sw.js`.
-6. Run the app using `npm start`.
-7. Open the app in 2 different browsers and login using 2 different users.
-8. Send the browser tab to the background.
-9. Send a message to the user logged in to it from the other browser.
-10. You should be able to see the notification since the other tab is not in focus.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![Home Page](images/home-updated.png "Home")
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
----
+### `npm test`
 
-## Documentation
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-<a href="https://prodocs.cometchat.com/docs/extensions-enhanced-push-notification" target="_blank">Token-based Push Notifications</a>
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).

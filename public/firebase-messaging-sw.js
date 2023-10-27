@@ -1,14 +1,50 @@
-// Scripts need to be imported in this service worker.
-// Instead of importing firebase.js we import just the firebase-app.js and firebase-messaging.js
-importScripts("https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js");
-importScripts("https://www.gstatic.com/firebasejs/8.1.1/firebase-messaging.js");
+// /* eslint-disable no-restricted-globals */
+// /* eslint-disable no-undef */
+// // required to setup background notification handler when browser is not in focus or in background and
+// // In order to receive the onMessage event,  app must define the Firebase messaging service worker
+// // self.importScripts("localforage.js");
 
-// Add your config object here.
-// Obtained from the Firebase project on Firebase Console.
-const FIREBASE_CONFIG = {
-  // CONFIG
+importScripts(
+  "https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"
+);
+importScripts(
+  "https://www.gstatic.com/firebasejs/9.15.0/firebase-messaging-compat.js"
+);
+// var TAG = "[Firebase-sw.js]"
+// // Set Firebase configuration, once available
+// self.addEventListener("notificationclick", function (event) {
+//   console.log(TAG, "notificationclick", event);
+//   if (event?.notification?.data) {
+//     let data = event.notification.data;
+//     if (data.FCM_MSG) {
+//       if (data.FCM_MSG?.data?.message) {
+//         let message = JSON.parse(data.FCM_MSG?.data?.message);
+//         clients.matchAll().then((clientList) => {
+//           if (clientList.length > 0) {
+//             clientList[0].postMessage({
+//               message,
+//             });
+//           }
+//         });
+//       }
+//     }
+//   }
+//   event.notification.close();
+
+// "Default" Firebase configuration (prevents errors)
+const defaultConfig = {
+  apiKey: true,
+  projectId: true,
+  messagingSenderId: true,
+  appId: true,
 };
 
-firebase.initializeApp(FIREBASE_CONFIG);
+// Initialize Firebase app
+firebase.initializeApp(self.firebaseConfig || defaultConfig);
+let messaging;
+try {
+  messaging = firebase.messaging();
+} catch (err) {
+  console.error("Failed to initialize Firebase Messaging", err);
+}
 
-firebase.messaging();
